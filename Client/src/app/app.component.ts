@@ -9,5 +9,12 @@ import { UserComponent } from './users/user.component';
   providers: [UserComponent]
 })
 export class AppComponent {
-  title = 'app works!';
+  
+  newnote: any;
+  url: any;
+  createnote(){
+    this.url = "http://localhost:4200/notes/"+this.newnote;
+    console.log(this.url);
+    window.location.href = this.url;
+  }
 }
