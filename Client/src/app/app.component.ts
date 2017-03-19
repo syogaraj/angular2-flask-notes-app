@@ -16,6 +16,7 @@ export class AppComponent {
   createnote(){
     this.url = "http://localhost:4200/notes/"+this.newnote;
     console.log(this.url);
+    this.showUrl = false;
     window.location.href = this.url;
   }
 }
