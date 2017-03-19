@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { Autosize } from 'angular2-autosize';
+import { Autosize } from 'angular2-autosize/angular2-autosize';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';

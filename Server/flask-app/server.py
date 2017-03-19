@@ -1,7 +1,9 @@
 from flask import Flask, Response, request
+from flask_cors import CORS
 import os, subprocess
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/notes/<username>', methods=['GET'])
 def getnotes(username):
