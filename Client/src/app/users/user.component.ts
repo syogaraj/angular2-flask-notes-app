@@ -15,24 +15,29 @@ import { Http, Response } from '@angular/http';
             }`]
 })
 
-export class UserComponent{
+export class UserComponent implements OnInit{
     username: any;
     notes: any;
-    appurl = "http://localhost:5000/notes/"+this.username;
-
+    geturl: string;
+    posturl: string;
     constructor(private http: Http, private route: ActivatedRoute) { 
         this.username = this.route.snapshot.params['username']
         console.log(this.username);
+        this.geturl = "http://localhost:5000/notes/"+this.username;
+        this.posturl = "http://localhost:5000/post/"+this.username;
     }
 
     ngOnInit(){
-        this.http.get(this.appurl).subscribe(
+        console.log(this.geturl);
+        this.http.get(this.geturl).subscribe(
             data=> {
-                this.notes=data;
+                console.log(data);
+                this.notes=data.text();
             }
         )
     }
     Save(): void{
         console.log('Clicked -- save '+this.notes);
+        //this.http.post(this.posturl)
     }
 }

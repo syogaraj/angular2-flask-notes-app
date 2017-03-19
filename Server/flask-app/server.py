@@ -22,7 +22,7 @@ def writenotes(username):
     data = request.get_data()
     print data
     notefile.write(str(data))
-    return "File written"
+    return Response(data, mimetype="text/plain")
 
 if __name__ == "__main__":
     app.run(debug=True)
