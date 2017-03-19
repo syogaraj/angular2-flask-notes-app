@@ -11,7 +11,7 @@ def getnotes(username):
     notefile = open(username, 'a+')
     notesdata = notefile.read()
     notefile.close()
-    print "Data:",notesdata
+    print "Data:", notesdata
     os.chdir("../flask-app")
     return Response(notesdata, mimetype="text/plain")
 

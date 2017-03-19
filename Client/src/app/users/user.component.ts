@@ -38,6 +38,11 @@ export class UserComponent implements OnInit{
     }
     Save(): void{
         console.log('Clicked -- save '+this.notes);
-        //this.http.post(this.posturl)
+        this.http.post(this.posturl, this.notes).subscribe(
+            data=>{
+                alert("Notes taken!!");
+                this.notes = data.text();
+            }
+        )
     }
 }
