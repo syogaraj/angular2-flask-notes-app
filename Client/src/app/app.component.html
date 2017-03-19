@@ -1,6 +1,5 @@
 <navbar></navbar>
-<img />
-<div class="container">
-
+<div class="container input-group">
+    <input autosize [(ngModel)]="newnote" class="form-control"/><span class="input-group-btn"><button (click)="createnote()" class="btn btn-primary">Note!!</button></span>
 </div>
 <router-outlet></router-outlet>
