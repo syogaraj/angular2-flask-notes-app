@@ -11,6 +11,7 @@ import { Http, Response } from '@angular/http';
                     margin-top: 10px;
                 }
             textarea{
+                margin-top:10px;
                 display: table-cell;
             }`]
 })
@@ -20,7 +21,6 @@ export class UserComponent implements OnInit{
     notes: any;
     geturl: string;
     posturl: string;
-    showUrl: boolean;
     constructor(private http: Http, private route: ActivatedRoute) { 
         this.username = this.route.snapshot.params['username']
         console.log(this.username);
@@ -29,7 +29,6 @@ export class UserComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.showUrl = false;
         console.log(this.geturl);
         this.http.get(this.geturl).subscribe(
             data=> {
