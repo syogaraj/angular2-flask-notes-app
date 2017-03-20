@@ -18,9 +18,9 @@ This will start the client and it will running in http://localhost:4200
 ## Server
 Open up a new tab in terminal,
 
-	## Server Requirements:
-		1.flask  ## pip install flask
-		2.flask_cors  ## pip install flask_cors
+	Server Requirements:
+		1.flask  -->pip install flask
+		2.flask_cors  -->pip install flask_cors
 
 ```sh
 $ cd Server/flask-app
