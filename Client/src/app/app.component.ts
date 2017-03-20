@@ -1,22 +1,26 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserComponent } from './users/user.component';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [UserComponent]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   
   newnote: any;
   url: any;
-  showUrl: boolean = true;
+  routerlink: any;
+  showUrl: boolean;
+  
+  constructor(public router: Router){
+    this.showUrl = true;
+  }
+  
   createnote(){
-    this.url = "http://localhost:4200/notes/"+this.newnote;
-    console.log(this.url);
     this.showUrl = false;
-    window.location.href = this.url;
+    this.router.navigate(["/notes", this.newnote]);
   }
 }
